@@ -2,15 +2,6 @@ nav {
     margin-bottom: 10px;
 }
 
-#animes {
-    border: solid;
-    border-width: thin;
-}
-.anime{
-    margin-bottom: 15px; 
-}
-
-
 #root {
     margin-left: 130px;
     margin-right: 130px;
