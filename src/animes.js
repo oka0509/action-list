@@ -1,21 +1,28 @@
 import axios from "axios";
 import React from "react";
-import './animes.css';
+import './css/animes.css';
 
-const baseURL = 'https://api.jikan.moe/v3/genre/anime/26/1';
+const baseURL = 'https://api.jikan.moe/v4/anime';
 
 export default function Animes() {
     const [post, setPost] = React.useState(null);
  
     React.useEffect(() => {
-        axios.get(baseURL).then((response) => {
+        axios.get(baseURL, {
+          params: {
+            genres: 26,
+            sfw: true,
+            start_date: 2015
+          }
+        }).then((response) => {
+          console.log(response.data);
           setPost(response.data);
         });
     }, []);
 
     if (!post) return null;
 
-    const memberList = post.anime.map((e) => {
+    const memberList = post.data.map((e) => {
         return (
           <div className='anime'>
           <a 
@@ -23,9 +30,9 @@ export default function Animes() {
             target='_blank'
             rel='nonpener noreferrer'
           >
-          <img src={e.image_url} alt='yuriImg'/>
+          <img src={e.images.jpg.image_url} alt='yuriImg'/>
           <li>
-          {e.title}        
+          {e.titles[0].title}        
           </li>
           </a>
           <p className='animetext'>

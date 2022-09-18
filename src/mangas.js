@@ -1,21 +1,27 @@
 import axios from "axios";
 import React from "react";
-import './mangas.css';
+import './css/mangas.css';
 
-const baseURL = 'https://api.jikan.moe/v3/genre/manga/1/1';
+const baseURL = 'https://api.jikan.moe/v4/manga';
 
 export default function Mangas() {
     const [post, setPost] = React.useState(null);
  
     React.useEffect(() => {
-        axios.get(baseURL).then((response) => {
-          setPost(response.data);
+        axios.get(baseURL, {
+            params: {
+                genres: 26,
+                sfw: true,
+                start_date: 2015
+            }
+        }).then((res) => {
+          setPost(res.data);
         });
     }, []);
 
     if (!post) return null;
 
-    const memberList = post.manga.map((e) => {
+    const memberList = post.data.map((e) => {
         return (
           <div className='manga'>
           <a 
@@ -23,9 +29,9 @@ export default function Mangas() {
             target='_blank'
             rel='nonpener noreferrer'
           >
-          <img src={e.image_url} alt='yuriImg'/>
+          <img src={e.images.jpg.image_url} alt='yuriImg'/>
           <li>
-          {e.title}        
+          {e.titles[0].title}        
           </li>
           </a>
           <p className='mangatext'>
@@ -35,5 +41,5 @@ export default function Mangas() {
         );
     });
     
-    return <ul id='manga'>{memberList}</ul>;
+    return <ul id='mangas'>{memberList}</ul>;
   }
