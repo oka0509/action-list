@@ -1,22 +1,6 @@
-import React from "react";
-import { render } from "react-dom";
-import Animes from './animes.js';
-import './index.css'
+import React from 'react';
+import ReactDom from 'react-dom';
+import App from './App';
 
+ReactDom.render(<App />,document.getElementById('root'));
 
-class App extends React.Component {
-  
-  render() {
-    return (
-      <div>
-        <nav>
-          <h1>Yuri-app</h1>
-        </nav>
-        <Animes/>
-      </div>
-    );
-  }
-
-}
-
-render(<App />, document.getElementById("root"));

@@ -1,0 +1,11 @@
+
+/* rootをcssを画面の幅が狭いときにオフにしたい*/
+#root {
+    margin-left: 140px;
+    margin-right: 140px;
+}
+
+nav {
+    margin-bottom: 10px;
+}
+

@@ -1,10 +1,10 @@
 import axios from "axios";
 import React from "react";
-import './animes.css';
+import './mangas.css';
 
-const baseURL = 'https://api.jikan.moe/v3/genre/anime/26/1';
+const baseURL = 'https://api.jikan.moe/v3/genre/manga/1/1';
 
-export default function Animes() {
+export default function Mangas() {
     const [post, setPost] = React.useState(null);
  
     React.useEffect(() => {
@@ -15,9 +15,9 @@ export default function Animes() {
 
     if (!post) return null;
 
-    const memberList = post.anime.map((e) => {
+    const memberList = post.manga.map((e) => {
         return (
-          <div className='anime'>
+          <div className='manga'>
           <a 
             href={e.url} 
             target='_blank'
@@ -28,12 +28,12 @@ export default function Animes() {
           {e.title}        
           </li>
           </a>
-          <p className='animetext'>
+          <p className='mangatext'>
             {e.synopsis}
           </p>
         </div>
         );
     });
     
-    return <ul id='animes'>{memberList}</ul>;
+    return <ul id='manga'>{memberList}</ul>;
   }

@@ -1,4 +1,4 @@
-.anime{
+.manga{
     margin-left: 40px;
     margin-right: 80px;
     margin-bottom: 10px; 
@@ -6,12 +6,12 @@
     display: flex;
 }
 
-#animes {
+#mangas {
     border: solid;
     border-width: thin;
 }
 
-.animetext {
+.mangatext {
     margin-left: 10px;
 }
 
