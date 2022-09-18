@@ -35,8 +35,10 @@ class App extends React.Component {
         <nav>
           <h1>Yuri-app</h1>
         </nav>
-        <button onClick={this.getJson}>Get Json</button>
-        {this.memberList(this.state.animes)}
+        <div id='animes'>
+          <button onClick={this.getJson}>Get Json</button>
+          {this.memberList(this.state.animes)}
+        </div>
       </div>
     );
   }
