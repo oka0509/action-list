@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const App = () => {
     return (
       <div>
-        <h1 id='title'>Yuri-List</h1>
+        <h1 id='title'>yuri-list</h1>
         <Header/>
         <BrowserRouter>
           <Routes>
