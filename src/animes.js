@@ -29,46 +29,47 @@ export default function Animes() {
     
     return(
       //親
-      <Grid container spacing={3}>
-        {post.data.map((e) => {
-          return (
-            //子
-            <Grid item xs={4}> 
-              <Grid container direction="column">
-                <Grid item container>
-                  <Grid sm={2} />
-                    <Grid xs={12} sm={8}>
-                     <Card variant="outlined">
-                        <CardContent>
-                        <Typography  color="textSecondary" gutterBottom>
-                          {e.title_japanese}
-                        </Typography>
-                        <Typography variant="h5" component="h2">
-                         {e.title}
-                        </Typography>
-                        <Typography  color="textSecondary">
-                          score:{e.score} out of 10
-                        </Typography>
-                        <Typography variant="body2" component="p">
-                          {e.synopsis}
-                        </Typography>
-                        </CardContent>
-                        <CardActions>
-                          <Button
-                           size="small"
-                           href={e.url}
-                           target='_blank'
-                           rel='nonpenner noreferrer'
-                          >Learn More</Button>
-                        </CardActions>
-                      </Card>
-                    </Grid>
-                  <Grid sm={2} />
+      <Grid container direction="column">
+        <Grid item container>
+          <Grid sm={2} />
+          <Grid xs={12} sm={8}>
+            <Grid container spacing={2}>
+            {post.data.map((e) => {
+              return (
+                //子
+                <Grid item xs={12} sm={4}> 
+                
+                  <Card variant="outlined">
+                    <CardContent>
+                      <Typography  color="textSecondary" gutterBottom>
+                        {e.title_japanese}
+                      </Typography>
+                      <Typography variant="h5" component="h2">
+                      {e.title}
+                      </Typography>
+                      <Typography  color="textSecondary">
+                        score:{e.score} out of 10
+                      </Typography>
+                      <Typography variant="body2" component="p">
+                        {e.synopsis}
+                      </Typography>
+                    </CardContent>
+                    <CardActions>
+                      <Button
+                      size="small"
+                      href={e.url}
+                      target='_blank'
+                      rel='nonpenner noreferrer'
+                      >Learn More</Button>
+                    </CardActions>
+                  </Card>
                 </Grid>
-              </Grid>
+              );
+            })}
             </Grid>
-          );
-        })}
+          </Grid>
+          <Grid sm={2} />
+        </Grid>
       </Grid>
     );
   }
