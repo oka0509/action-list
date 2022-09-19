@@ -3,6 +3,7 @@ import Animes from "./animes";
 import Mangas from "./mangas";
 import Header from "./header.js"
 import 'bootstrap/dist/css/bootstrap.min.css';  
+import './app.css';
 
 
 const App = () => {
@@ -16,6 +17,10 @@ const App = () => {
             <Route path={`/mangas`} element={<Mangas/>} />
           </Routes>
         </BrowserRouter>
+        <footer>
+          <p>oka</p>
+          <address><a href="https://github.com/oka0509" >github.com/oka0509</a></address>
+        </footer>
       </div>
     );
   };
