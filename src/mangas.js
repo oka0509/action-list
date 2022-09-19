@@ -20,7 +20,6 @@ export default function Animes() {
             start_date: 2015
           }
         }).then((response) => {
-          console.log(response.data);
           setPost(response.data);
         });
     }, []);
@@ -38,7 +37,6 @@ export default function Animes() {
               return (
                 //子
                 <Grid item xs={12} sm={4}> 
-                
                   <Card variant="outlined">
                     <CardContent>
                       <Typography  color="textSecondary" gutterBottom>

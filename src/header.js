@@ -1,10 +1,11 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';  
 import {Nav, Navbar, Container} from 'react-bootstrap';  
+import './header.css';
 
 export default function Header(){
     return (
-    <Navbar bg="light" expand="lg">
+    <Navbar id="header" bg="light" expand="lg">
     <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
