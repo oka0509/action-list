@@ -2,10 +2,9 @@ import axios from "axios";
 import React from "react";
 import { Grid } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { Link } from "@material-ui/core";
 
 const baseURL = 'https://api.jikan.moe/v4/manga';
 
@@ -42,9 +41,15 @@ export default function Animes() {
                       <Typography  color="textSecondary" gutterBottom>
                         {e.title_japanese}
                       </Typography>
-                      <Typography variant="h5" component="h2">
-                      {e.title}
-                      </Typography>
+                      <Link 
+                      href={e.url}
+                      target='_blank'
+                      rel='nonpenner noreferrer'
+                      >
+                        <Typography variant="h5" component="h2">
+                        {e.title}
+                        </Typography>
+                      </Link>
                       <Typography  color="textSecondary">
                         score:{e.score} out of 10
                       </Typography>
@@ -52,14 +57,6 @@ export default function Animes() {
                         {e.synopsis}
                       </Typography>
                     </CardContent>
-                    <CardActions>
-                      <Button
-                      size="small"
-                      href={e.url}
-                      target='_blank'
-                      rel='nonpenner noreferrer'
-                      >Learn More</Button>
-                    </CardActions>
                   </Card>
                 </Grid>
               );
