@@ -38,13 +38,16 @@ export default function Animes() {
             {post.data.map((e) => {
               return (
                 //子
-                <Grid item xs={12} sm={4}> 
-                  
+                <Grid item xs={12} sm={4}>    
                   <Card variant="outlined">
-                  <CardMedia
-                        component="iframe"
-                        image={e.trailer.embed_url}
-                      />
+                    {e.trailer.embed_url !== null ?
+                      <CardMedia
+                            component="iframe"
+                            image={e.trailer.embed_url + '?autoplay=0'}
+                          />
+                        :
+                      null
+                    }
                     <CardContent>
                       <Typography  color="textSecondary" gutterBottom>
                         {e.title_japanese}
