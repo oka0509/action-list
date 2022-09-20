@@ -2,10 +2,11 @@ import axios from "axios";
 import React from "react";
 import { Grid } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
-import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { Link } from "@material-ui/core";
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
 
 const baseURL = 'https://api.jikan.moe/v4/anime';
 
@@ -40,11 +41,9 @@ export default function Animes() {
                 <Grid item xs={12} sm={4}>    
                   <Card variant="outlined">
                     {e.trailer.embed_url !== null ?
-                      <CardMedia
-                            component="iframe"
-                            loading="lazy"
-                            image={e.trailer.embed_url + '?autoplay=0'}
-                          />
+                      <LiteYouTubeEmbed 
+                          id={e.trailer.youtube_id}
+                      />             
                         :
                       null
                     }
