@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';  
 import {Nav, Navbar, Container} from 'react-bootstrap';  
-import './header.css';
+import '../css/header.css';
 
 export default function Header(){
     return (
