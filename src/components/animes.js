@@ -42,6 +42,7 @@ export default function Animes() {
                     {e.trailer.embed_url !== null ?
                       <CardMedia
                             component="iframe"
+                            loading="lazy"
                             image={e.trailer.embed_url + '?autoplay=0'}
                           />
                         :
