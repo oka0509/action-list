@@ -16,7 +16,7 @@ export default function Animes() {
     React.useEffect(() => {
         axios.get(baseURL, {
           params: {
-            genres: 26,
+            genres: 1,
             sfw: true,
             start_date: 2015
           }
