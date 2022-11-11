@@ -9,7 +9,7 @@ import './css/app.css';
 const App = () => {
     return (
       <div>
-        <h1 id='title'>yuri-list</h1>
+        <h1 id='title'>action-list</h1>
         <Header/>
         <BrowserRouter>
           <Routes>
